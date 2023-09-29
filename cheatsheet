@@ -1,0 +1,33 @@
+---VS Code---
+-> dotnet new webapi -n CommandService
+-> dotnet build
+-> dotnet run
+-> dotnet ef migrations add initialmigration
+-> code -r <ServiceName>
+---Docker---
+-> docker build -t ilterstellar/platformservice .
+-> docker ps
+-> docker images
+-> docker containers
+-> docker push ilterstellar/platformservice
+-> docker run -p 6060:80 -d ilterstellar/platformservice
+---Kubernetes---
+-> kubectl get deployments
+-> kubectl get pods
+-> kubectl get services
+-> kubectl rollout restart deployment platforms-depl
+-> kubectl apply -f platforms-depl.yaml
+-> kubectl delete deployment platforms-depl
+-> kubectl create secret generic mssql --from-literal=SA_PASSWORD="pa55w0rd!"
+-> kubectl get pvc
+-> kubectl get storage class
+
+
+---Routes---
+-> Local
+  -> Platform http://localhost:5099/api/platforms/
+  -> Command http://localhost:5144/api/c/platforms/
+-> Node Port
+  -> http://localhost:30780/api/platforms
+-> Nginx
+  -> https://acme.com/api/platforms
